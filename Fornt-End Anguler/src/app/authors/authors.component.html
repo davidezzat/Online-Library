@@ -1,0 +1,21 @@
+<section class="Authorcontainer mt-5">
+  <div class="container mt-5 ">
+        <input type="text" placeholder="Search About Your Author" class="form-control my-5 " [(ngModel)]="term">
+
+      <div class="row">
+        <div *ngFor="let author of authors|search:term " class="col-md-3"> 
+          <div class="authorcard">
+                <div  class="card" id="card1" >
+                    <img style="max-height: 250px; min-height: 250px;" class="imageheight" [src]="author.authorimage" class="card-img-top img-fluid" [title]="author.description">
+                    <div class="card-body">
+                    <h5 class="card-title">{{author.authorname}}</h5>
+                    <p class="card-text">About {{author.authorname}} Author...</p>
+                    <a [routerLink]="['/authordetails',author.authorname]" class="btn btn-outline-warning"> Author Books </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+      </div>
+  </div>
+</section>
